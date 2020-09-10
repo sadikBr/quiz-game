@@ -1,16 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
-import { Categories } from "./Config";
-import MenuPage from "./Components/MenuPage";
-import "./App.css";
-import Question from "./Components/Question";
-import EndGame from "./Components/EndGame";
+import React, { useState, useEffect } from 'react';
+import { Categories } from './Config';
+import MenuPage from './Components/MenuPage';
+import './App.css';
+import Question from './Components/Question';
+import EndGame from './Components/EndGame';
 
 function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [category, setCategory] = useState("General knowledge");
-  const [difficulty, setDifficulty] = useState("Easy");
+  const [category, setCategory] = useState('General knowledge');
+  const [difficulty, setDifficulty] = useState('Easy');
   const [nbrOfQuestions, setNbrOfQuestions] = useState(10);
   const [API_URL, setAPI_URL] = useState(
     `https://opentdb.com/api.php?amount=${nbrOfQuestions}&category=${
@@ -33,11 +33,11 @@ function App() {
   }, [category, difficulty, nbrOfQuestions]);
 
   function handleChange(element) {
-    if (element.name === "nbrOfQuestions") {
+    if (element.name === 'nbrOfQuestions') {
       setNbrOfQuestions(element.value);
-    } else if (element.name === "categories") {
+    } else if (element.name === 'categories') {
       setCategory(element.value);
-    } else if (element.name === "difficulties") {
+    } else if (element.name === 'difficulties') {
       setDifficulty(element.value);
     }
   }
@@ -49,7 +49,7 @@ function App() {
       .catch((err) => {
         setLoading(false);
         console.log(err);
-        alert("That category is not available");
+        alert('That category is not available');
       })
       .then((data) => {
         setQuestions(data.results);
@@ -65,7 +65,7 @@ function App() {
       .catch((err) => {
         setLoading(false);
         console.log(err);
-        alert("That category is not available");
+        alert('That category is not available');
       });
   }
 
@@ -103,7 +103,7 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div className='app'>
       {gameEnded ? (
         <EndGame score={score} resetGame={resetGame} />
       ) : gameStarted ? (

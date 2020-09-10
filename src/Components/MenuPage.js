@@ -1,21 +1,21 @@
-import React from "react";
-import { Categories, Difficulties } from "../Config";
+import React from 'react';
+import { Categories, Difficulties } from '../Config';
 
 function MenuPage(props) {
   return (
-    <div className="menu-page">
-      <h1 className="title">
+    <div className='menu-page'>
+      <h1 className='title'>
         Welcome To this quiz game, Choose your settings and start the game.
       </h1>
-      <div className="settings">
+      <div className='settings'>
         <h1>
           Number Of Questions:
           <input
             onChange={(event) => props.handleChange(event.target)}
             value={props.nbrOfQuestions}
-            name="nbrOfQuestions"
-            type="number"
-            max="50"
+            name='nbrOfQuestions'
+            type='number'
+            max='50'
           />
         </h1>
         <h1>
@@ -23,7 +23,7 @@ function MenuPage(props) {
           <select
             onChange={(event) => props.handleChange(event.target)}
             value={props.category}
-            name="categories"
+            name='categories'
           >
             {Categories.map((category) => (
               <option key={category} value={category}>
@@ -37,7 +37,7 @@ function MenuPage(props) {
           <select
             onChange={(event) => props.handleChange(event.target)}
             value={props.difficulty}
-            name="difficulties"
+            name='difficulties'
           >
             {Difficulties.map((difficulty) => (
               <option key={difficulty} value={difficulty}>
@@ -49,13 +49,13 @@ function MenuPage(props) {
       </div>
       <button
         onClick={() => props.fetchDataAndStart(props.url)}
-        className="start-game"
+        className='start-game'
       >
-        Start Game{" "}
+        Start Game{' '}
       </button>
       <span
-        className="loading"
-        style={{ display: props.loading ? "inline" : "none" }}
+        className='loading'
+        style={{ display: props.loading ? 'inline' : 'none' }}
       >
         Loading ...
       </span>
