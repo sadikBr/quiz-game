@@ -48,7 +48,6 @@ function App() {
       .then((response) => response.json())
       .catch((err) => {
         setLoading(false);
-        console.log(err);
         alert('That category is not available');
       })
       .then((data) => {
@@ -64,7 +63,6 @@ function App() {
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err);
         alert('That category is not available');
       });
   }
