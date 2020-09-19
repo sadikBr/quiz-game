@@ -103,7 +103,11 @@ function App() {
   return (
     <div className='app'>
       {gameEnded ? (
-        <EndGame score={score} resetGame={resetGame} />
+        <EndGame
+          score={score}
+          resetGame={resetGame}
+          nbrOfQuestions={nbrOfQuestions}
+        />
       ) : gameStarted ? (
         <Question
           showAnswers={showAnswers}

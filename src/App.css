@@ -43,15 +43,15 @@
   justify-content: space-between;
 }
 
-.settings h1 input {
-  flex: 1;
-  margin-left: 10px;
-  padding: 5px;
-}
-
+.settings h1 input,
 .settings h1 select {
   flex: 1;
   margin-left: 10px;
+  padding: 5px;
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-radius: 5px;
 }
 
 .start-game {
@@ -139,4 +139,66 @@
 
 .game-end button:hover {
   background: rgb(238, 172, 48);
+}
+
+@media screen and (min-width: 1360px) {
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .settings {
+    margin-bottom: 50px;
+  }
+
+  .settings h1 {
+    font-size: 1.5rem;
+    padding: 15px;
+    align-items: center;
+  }
+
+  .settings h1 input,
+  .settings h1 select {
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 1.4rem;
+    border-radius: 5px;
+  }
+
+  .start-game {
+    font-size: 2rem;
+  }
+
+  .loading {
+    transform: translate(1em, 0em);
+    font-size: 2rem;
+  }
+
+  .question-field h1 {
+    min-height: 45%;
+    font-size: 3rem;
+  }
+
+  .options {
+    justify-content: center;
+  }
+
+  .options h3 {
+    width: 49%;
+    font-size: 2rem;
+    margin: 3px;
+    padding: 35px;
+    background: rgb(216, 198, 165);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .game-end button {
+    font-size: 2rem;
+  }
+
+  .game-end {
+    text-align: center;
+    font-size: 2rem;
+  }
 }
